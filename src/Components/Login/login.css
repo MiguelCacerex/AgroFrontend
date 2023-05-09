@@ -1,0 +1,27 @@
+.logo2 {
+    width: 150px;
+    height: 150px;
+}
+
+.btnLogin2 {
+    background-color: #2393AE !important;
+    text-align: center !important;
+    color: white !important;
+    padding: 3px;
+    font-size: 18px !important;
+}
+
+.footermodel {
+    margin-top: 20px;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.enlaces{
+    display: block;
+    text-align: center;
+}
+
+.textfiel-login{
+    width: 100%;
+}

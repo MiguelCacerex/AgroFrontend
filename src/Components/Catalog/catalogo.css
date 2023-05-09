@@ -1,0 +1,64 @@
+.imgCargando {
+    height: 150px;
+    width: 150px;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.div-imgCargando{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 100vw;
+}
+.div-body{
+    text-align: center;
+}
+.div-title{
+    color: white;
+    font-size: 30px !important;
+}
+.div-text{
+    color: white;
+    font-size: 20px !important;
+}
+.div-img-card{
+    height: 214px;
+}
+.cardColor{
+    background-color: rgba(38, 80, 115, 0.7) !important;
+}
+.conteiner-card{
+    display: flex !important;
+    justify-content: center !important;
+}
+.btnCard{
+    display: flex;
+    text-align: center !important;
+    border-radius: 20px;
+    color: white;
+    background-color: #265073 !important;
+    font-size: 10px;
+    width: 130px;
+    height: 40px;
+    cursor: pointer;
+    margin: auto;
+    margin-bottom: 10px;
+}
+.btnCard:hover{
+    border-color: black;
+    font-size: 18px;
+    color: #265073 !important;
+    background-color: white !important;
+    border: 2px solid #265073 !important;
+}

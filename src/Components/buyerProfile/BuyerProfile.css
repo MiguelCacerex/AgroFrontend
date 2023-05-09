@@ -1,0 +1,20 @@
+.iconoPerfil1{
+    border-radius: 50%;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.iconoPerfil2{
+    border-radius: 50%;
+    height: 115px;
+    margin-left: -98px;
+    margin-top: 10px;
+}
+
+.informacion{
+
+}
+
+.saludoPerfil{
+    display: inline;
+}
