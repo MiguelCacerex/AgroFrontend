@@ -12,7 +12,7 @@ export default function PageHome() {
           <CategoriaDestacada />
         </div>
         <div className='container-carrusel'>
-          <h2 className='divider'>Productoses Destacados</h2>
+          <h2 className='divider'>Produuuctoses Destacados</h2>
           <CarruselProductosDestacados></CarruselProductosDestacados>
         </div>
         <div className='container-carrusel'>
