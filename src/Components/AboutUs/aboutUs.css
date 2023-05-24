@@ -1,0 +1,29 @@
+.div-title-aboutUs{
+    text-align: center;
+    padding-top: 30px;
+    height: 100px;
+    background-color: rgba(38, 187, 177,0.2);
+}
+.div-title2-aboutUs{
+    text-align: center;
+}
+.title-aboutUs{
+    color: #265073;
+    
+}
+.p-aboutUs{
+    color: #265073;
+    font-size: 18px;
+}
+.div-p-aboutUs{
+    text-align: justify;
+    padding: 20px;
+}
+.container-cardbody{
+    text-align: center;
+    text-decoration: none;
+}
+.card-pefil{
+    display: flex;
+    justify-content: center;
+}

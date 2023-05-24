@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getAllProducts } from "../../Services/product.service";
-import ImgCargando  from "../Catalog/imgCargando"
+import ImgCargando from "../Catalog/imgCargando"
 import ListCardsProducts from "../Catalog/listCardsProducts"
 
 export default function Proveedores() {
@@ -9,17 +9,20 @@ export default function Proveedores() {
 
   useEffect(() => {
     const getAllProductsDB = async () => {
-
       const productsDB = await getAllProducts();
       setListProducts(productsDB.data.result);
-  }
-  getAllProductsDB();
-  }, []) 
-   
+    }
+    getAllProductsDB();
+  }, [])
+
   return (
     <div>
-      <h1>Lista de productos</h1>
-      {products.length !== 0 ? <ListCardsProducts  products={products}/>:<ImgCargando/>}
+      <div className='div-title-catalog'>
+        <h1 className='title-catalog'>Catalogo De Productos</h1>
+      </div>
+      <div className='div-lst-products'>
+      {products.length !== 0 ? <ListCardsProducts products={products} /> : <ImgCargando />}
+      </div>
     </div>
   )
 }

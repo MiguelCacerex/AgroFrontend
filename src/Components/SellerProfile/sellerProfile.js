@@ -6,8 +6,6 @@ import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
 import { createNewProduct, deleteProduct, getProductsSeller, updateProduct } from '../../Services/seller.service';
 import Modal from 'react-bootstrap/Modal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import Form from 'react-bootstrap/Form';
@@ -25,10 +23,8 @@ function SellerProfile() {
   const [idProductSelect, setidProductSelect] = useState("");
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-  const [refresh, setRefresh] = useState(true);
   const [validated, setValidated] = useState(false);
   const [loading, setLoading] = useState("");
-  const [showMessage, setshowMessage] = useState("Bienvenido");
   const [nameProduct, setNameProduct] = useState("");
   const [categoryProduct, setCategoryProduct] = useState([]);
   const [descriptionProduct, setDescriptionProduct] = useState("");
@@ -511,7 +507,7 @@ function SellerProfile() {
         </TabView>
       </div>
 
-      <Button onClick={handleLogout} className='btnLogout'>Logout</Button>
+      <Button onClick={handleLogout} className='btnLogout'>Cerrar Sesion</Button>
 
     </>
   )

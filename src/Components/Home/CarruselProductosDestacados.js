@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Carousel } from 'primereact/carousel';
-import { getProductsSeller } from '../../Services/seller.service';
 import { getAllLastProducts } from '../../Services/product.service';
 import { Link } from 'react-router-dom';
 
@@ -49,13 +48,12 @@ export default function CarruselProductosDestacados() {
 
     const getProductsSellerDB = async () => {
         const productsDB = await getAllLastProducts();
-        console.log(productsDB)
         setProducts(productsDB.data.result);
     }
 
     const productTemplate = (product) => {
         return (
-            <Link to={`/product/${product._id}`}>
+            <Link to={`/product/${product._id}`} style={{ textDecoration: 'none', color:"#265073" }}>
                 <div className=" text-center py-3">
                 <div className="mb-3">
                     <img src={product.urlImg} alt={product.name} className="shadow-5 div-img-carrusel" />

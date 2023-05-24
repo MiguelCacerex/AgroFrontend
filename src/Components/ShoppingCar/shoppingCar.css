@@ -1,0 +1,19 @@
+.div-title-car{
+    text-align: center;
+    padding-top: 30px;
+    height: 100px;
+    background-color: rgba(38, 187, 177,0.2);
+}
+.title-car{
+    color: #265073;
+}
+.imgProductCar{
+height: 100px;
+}
+.btn-delete-productCar{
+    background-color: #EF4444 !important;
+}
+.div-info-carProducts{
+    text-align: center;
+    margin-top: 200px;
+}

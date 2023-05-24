@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-
-
-import { CardContent, Card } from "@mui/material";
-import { GiPineapple, GiTargetArrows, GiTomato } from "react-icons/gi";
 
 
 function CategoriaDeseada() {
 
     const [show, setShow] = useState(false);
-    const [listCategories, setlistCategories] = useState(['Verdura','Granos'])
+    const [listCategories, setlistCategories] = useState([])
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -20,6 +16,9 @@ function CategoriaDeseada() {
         //colocar el codigo para el filtro por categorias
     };
 
+    useEffect(() => {
+        setlistCategories(['Frutas','Verduras','Granos','Frutos Secos','Especias'])
+    }, []);
 
     return (
         <div className="categoriaDeseada" >
@@ -38,18 +37,6 @@ function CategoriaDeseada() {
                    }
                 </Offcanvas.Body>
             </Offcanvas>
-            {/* <Card style={{backgroundColor: '#26BBB1',width:'1300px', marginLeft:'27px', marginTop:'20px'}}>
-                <CardContent >
-                    <Card style={{backgroundColor: '#CBEAE2', width:'980px', marginLeft: '290px', marginTop:'10px', height:'152px'}}>
-                        <CardContent>
-                            <h1 style={{fontSize:'80px', marginLeft:'50px'}}><GiPineapple /> <GiTomato/>
-                                                            <h5>Frutas            Verduras</h5></h1>
-                            
-
-                        </CardContent>
-                    </Card>
-                </CardContent>
-            </Card> */}
 
         </div>
 

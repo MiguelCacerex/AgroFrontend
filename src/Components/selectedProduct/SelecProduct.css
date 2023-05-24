@@ -1,0 +1,97 @@
+.div-img-product {
+    height: 400px;
+    width: 100%;
+    padding: 10px;
+}
+
+.p-div {
+    color: #265073;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.div-info {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.p-cantidad {
+    color: #265073;
+    font-size: 25px;
+    font-weight: 700;
+    padding-right: 10px;
+    display: inline !important;
+}
+
+.div-detail-product {
+    padding: 10px;
+}
+
+.input-cantidad {
+    width: 180px !important;
+    display: inline !important;
+    height: 50px !important;
+}
+
+.div-comentarios {
+    color: #265073;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.div-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-form-product {
+    margin-top: 80px;
+}
+
+.btn-añadirProduct {
+    background-color: #265073 !important;
+    text-align: center !important;
+    color: white !important;
+    font-size: 18px !important;
+}
+
+.btn-añadirProduct:hover {
+    background-color: white !important;
+    color: #265073 !important;
+    font-weight: 700;
+    font-size: 18px !important;
+}
+
+.grid-product {
+    background-color: rgba(38, 187, 177, 0.10);
+    margin-top: 100px !important;
+}
+.icon-shopinCar{
+    color: #265073;
+    height: 30px;
+}
+.carrito {
+    border-radius: 10px 0px 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 60px;
+    position: fixed;
+    top: 20%;
+    right: 0px;
+    transform: translateY(-50%);
+    background-color: #2393AE;
+}
+
+@media (max-width: 900px) {
+    .div-infoProduct {
+        text-align: center;
+    }
+
+    .div-form-product {
+        text-align: center;
+    }
+}

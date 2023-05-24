@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import '../Login/registro.css'
-import { Link as RouteLink, useNavigate } from 'react-router-dom';
+import { Link as RouteLink } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Checkbox from '@mui/material/Checkbox';
 import { singUp } from '../../Services/user.service';
@@ -18,7 +18,6 @@ const theme = createTheme();
 
 export default function Registro() {
   const toast = useRef(null);
-  const maxsize = 20;
   const [name, setName] = useState("");
   const [apellido, setApellido] = useState("");
   const [email, setEmail] = useState("");
@@ -269,7 +268,6 @@ export default function Registro() {
                       placeholder="Ingrese su direccion"
                       onChange={({ target }) => setDirection(target.value)}
                       value={direction}
-
                     />
                     <Form.Control.Feedback type="invalid">
                       Por favor ingrese su direccion.

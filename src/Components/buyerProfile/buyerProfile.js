@@ -1,40 +1,20 @@
 import './BuyerProfile.css';
-import UserForm from './UserForm';
-import Perfil from './Perfil';
-import HistorialCompras from './HistorialCompras';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-import { useState } from 'react';
+import React, {useState, useEffect } from 'react'
+import { Button } from 'primereact/button';
+import { DataView } from 'primereact/dataview';
+import '../ShoppingCar/shoppingCar.css'
+import { getAllProductsCar, deleteProductCar } from '../../Services/buyer.service';
 import Cookies from "universal-cookie"
-import Button from 'react-bootstrap/Button';
-
-
-const usuario = {
-  userName: "Xime",
-  name: "Laura Ximena",
-  surname: "Montoya Murillo",
-  phone: "985978989",
-};
-
-const historialCompras = [{
-  codigo: "1",
-  nombre: "Arroz",
-  cantidad: "2",
-  valor: "10000"
-},
-{
-  codigo: "2",
-  nombre: "Arroz",
-  cantidad: "2",
-  valor: "10000"
-}
-];
-
+import { Grid } from '@mui/material';
+import Box from '@mui/material/Box';
+import { TabView, TabPanel } from 'primereact/tabview';
 
 
 function BuyerProfile() {
-  const [showUserFormIsShown, setUserFormIsShown] = useState(false);
   const cookies = new Cookies()
+  const [user, setUser] = useState(cookies.get('userSession'))
+  const [dataUser, setDataUser] = useState(cookies.get('userData'))
+  const [productsCar, setProductsCar] = useState([])
 
   const handleLogout = async (event) => {
     cookies.remove("userSession", { path: '/' })
@@ -45,58 +25,83 @@ function BuyerProfile() {
     cookies.remove("token", { path: '/' })
     window.location.href = "/";
   };
-  function showUserFormHandler() {
-    setUserFormIsShown(true);
+
+
+  useEffect(() => {
+    obternerProductosCarroCompras();
+  }, [productsCar])
+
+  const obternerProductosCarroCompras = async () => {
+    const res = (await getAllProductsCar(dataUser._id)).data
+    setProductsCar(res.productsCar)
+  }
+  const eliminarProductoCarrito = async (idProducto) => {
+    const res = (await deleteProductCar(idProducto, dataUser._id)).data
+    setProductsCar(res.productsCar)
+  }
+
+  const itemTemplate = (product) => {
+    return (
+      <div className="col-12">
+        <div className="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+          <img className="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round imgProductCar" src={product.urlImg} alt={product.name} />
+          <div className="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+            <div className="flex flex-column align-items-center sm:align-items-start gap-3">
+              <div className="text-2xl font-bold text-900">{product.name}</div>
+            </div>
+            <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+              <span className="text-2xl font-semibold">Sub-Total: ${product.price}</span>
+              <Button icon="pi pi-trash" className="p-button-rounded btn-delete-productCar" onClick={eliminarProductoCarrito.bind(null, product._id)} value={product._id}></Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   };
-
-  function hideUserFormHandler() {
-    setUserFormIsShown(false);
-  };
-
-  const [key, setKey] = useState('detalles');
-
-  const [image, setImage] = useState();
 
   return (
-    <div className='BuyerProfile'  >
-      <Button onClick={handleLogout} className='btnNav'>Logout</Button>
+    <>
+      <Box sx={{ width: '100%' }}>
+        <Grid container className='div-grid-c'>
+          <Grid item xs={12} sm={12} md={6} lg={4} xl={4} className='div-grid-img'>
+            <div className='grid-div'>
+              <img className='div-img' src={user.urlImg} alt='imagenPerfil' />
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={12} md={6} lg={8} xl={8} className='div-grid-h1'>
+            <div>
+              <h1>{dataUser.storeName}</h1>
+              <h1>Bienvenido!  {user.name}</h1>
+              <h1 className='div-h1'>{user.email}</h1>
+            </div>
+          </Grid>
+        </Grid>
+      </Box>
 
-      {showUserFormIsShown && <UserForm onSetImage={setImage} onCloseUserForm={hideUserFormHandler} />}
+      <div className="div-tabs">
+        <TabView>
+          <TabPanel header="Mis compras">
+            <div>
 
-      {image}
+            </div>
+          </TabPanel>
+          <TabPanel header="Mi Carrito de compras">
+            <div className="card">
+              {
+                productsCar !== undefined && productsCar.length > 0
+                  ? <DataView value={productsCar} itemTemplate={itemTemplate} />
+                  : <>
+                    <h3 className='div-info-carProducts'>No tiene Productos en su carrito</h3>
+                  </>
+              }
+            </div>
+          </TabPanel>
+        </TabView>
+      </div>
 
-      <h3 className="saludoPerfil">Hola {usuario.name}!</h3>
+      <Button onClick={handleLogout} className='btnLogout'>Cerrar Sesion</Button>
 
-
-      <Tabs
-        defaultActiveKey="profileBuyer"
-        id="profileBuyer"
-        activeKey={key}
-        onSelect={(k) => setKey(k)}
-        style={{ backgroundColor: 'white', marginTop: '30px' }}
-
-      >
-        <Tab eventKey="detalles" title="DETALLES">
-          <Perfil
-            user={usuario}
-            onShowUserForm={showUserFormHandler}
-          />
-
-        </Tab>
-        <Tab eventKey="carrito" title="CARRITO DE COMPRAS" >
-
-        </Tab>
-        <Tab eventKey="historial" title="HISTORIAL DE COMPRAS">
-          <HistorialCompras
-            historial={historialCompras}
-          />
-
-        </Tab>
-        <Tab eventKey="producto" title="PRODUCTOS FAVORITOS">
-
-        </Tab>
-      </Tabs>
-    </div>
+    </>
   );
 }
 

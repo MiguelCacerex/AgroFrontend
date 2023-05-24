@@ -18,18 +18,13 @@ import Modal from 'react-bootstrap/Modal';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
 import Box from '@mui/material/Box';
-import Checkbox from '@mui/material/Checkbox';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Collapse from 'react-bootstrap/esm/Collapse';
 
 function Copyright(props) {
     return (
@@ -190,14 +185,7 @@ export default function NavBar() {
                     </NavLink>
                     {windowSize.width >= 800
                         ? <>
-                            <Form className="d-flex buscador2" >
-                                <FloatingLabel controlId="floatingInput" label="Ingresa el nombre del producto" className="search-textField ">
-                                    <Form.Control className="search-textField" type="text" placeholder="INgresa el nombre del" />
-                                </FloatingLabel>
-                                <Button className='btnSearch' type="submit">
-                                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                                </Button>
-                            </Form>
+                            
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll" className="btns-nav ">
                                 <Nav navbarScroll className='navBar' >
@@ -259,14 +247,7 @@ export default function NavBar() {
                                     }
                                 </Nav>
                             </Navbar.Collapse>
-                            <Form className="d-flex buscador">
-                                <FloatingLabel controlId="floatingInput" label="Ingresa el nombre del producto" className="search-textField">
-                                    <Form.Control className="search-textField" type="text" placeholder="INgresa el nombre del" />
-                                </FloatingLabel>
-                                <Button className='btnSearch' type="submit">
-                                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                                </Button>
-                            </Form>
+                         
 
                         </>}
 
