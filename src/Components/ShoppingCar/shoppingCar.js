@@ -47,7 +47,7 @@ function ShoppingCar() {
   return (
     <div>
       <div className='div-title-car'>
-        <h1 className='title-car'>Mi Carro De Compras</h1>
+        <h1 className='title-car'>Mi Carrito De Compras</h1>
       </div>
       <div className="card">
         {
