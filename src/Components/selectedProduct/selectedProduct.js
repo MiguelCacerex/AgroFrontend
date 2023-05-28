@@ -15,9 +15,9 @@ import { getAllProductsCar } from '../../Services/buyer.service';
 
 
 function SelectedProduct() {
+
   const cookies = new Cookies()
   const toast = useRef(null);
-
 
   const { idProduct } = useParams();
   const [product, setProduct] = useState("");
@@ -70,14 +70,11 @@ function SelectedProduct() {
     }
   }
 
-
-  console.log(dataUser.cartProducts.length)
-
   return (
     <div>
       <Toast ref={toast} />
       {
-        dataUser !== undefined && dataUser.cartProducts.length > 0
+        dataUser !== undefined && user.type === 'BUYER' && dataUser.cartProducts.length > 0
           ? <a href={'/carrito/'+dataUser._id}>
             <div className="carrito" >
             <FontAwesomeIcon icon={faShoppingCart} className='icon-shopinCar'/>
