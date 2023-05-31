@@ -6,6 +6,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import imgMiguel from '../../Assets/imgMiguel.jpeg'
+import imgDayana from '../../Assets/imgDayana.jpeg'
+import imgXimena from '../../Assets/imgXimena.jpeg'
+
 
 export default class AboutUs extends Component {
   render() {
@@ -32,8 +36,8 @@ export default class AboutUs extends Component {
                 <Card sx={{ maxWidth: 345 }}>
                   <CardMedia
                     component="img"
-                    height="100"
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    height="300"
+                    image={imgXimena}
                     alt="imagen de persona"
                   />
                   <CardContent className='container-cardbody'>
@@ -53,8 +57,8 @@ export default class AboutUs extends Component {
                 <Card sx={{ maxWidth: 345 }}>
                   <CardMedia
                     component="img"
-                    height="100"
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    height="300"
+                    image={imgDayana}
                     alt="imagen de persona"
                   />
                   <CardContent className='container-cardbody'>
@@ -74,8 +78,8 @@ export default class AboutUs extends Component {
                 <Card sx={{ maxWidth: 345 }}>
                   <CardMedia
                     component="img"
-                    height="100"
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    height="300"
+                    image={imgMiguel}
                     alt="imagen de persona"
                   />
                   <CardContent className='container-cardbody'>

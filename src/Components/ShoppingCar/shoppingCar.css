@@ -13,7 +13,19 @@ height: 100px;
 .btn-delete-productCar{
     background-color: #EF4444 !important;
 }
+.btn-comprar-todo{
+    background-color: #265073 !important;
+
+}
 .div-info-carProducts{
     text-align: center;
     margin-top: 200px;
+}
+.div-compra{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.precioTotal{
+    display: inline;
 }

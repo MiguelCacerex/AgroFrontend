@@ -230,7 +230,7 @@ export default function Registro() {
                     required
                     type="text"
                     className='textfield-form'
-                    placeholder="Ingrese su correo"
+                    placeholder="Ingrese su ubicacion actual"
                     onChange={({ target }) => setLocation(target.value)}
                     value={location}
                   />

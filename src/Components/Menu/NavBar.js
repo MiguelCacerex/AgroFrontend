@@ -158,9 +158,6 @@ export default function NavBar() {
                                         </Form.Control.Feedback>
                                     </Form.Group>
                                     <div className='div-enlaces'>
-                                        <RouteLink to="" className='enlaces'>
-                                            ¿Olvidaste tu contraseña?
-                                        </RouteLink>
                                         <RouteLink onClick={handleClose} to="../registro" className='enlaces'>
                                             {"¿No tienes una cuenta? Registrate"}
                                         </RouteLink>

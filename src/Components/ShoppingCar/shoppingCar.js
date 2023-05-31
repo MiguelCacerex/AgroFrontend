@@ -58,6 +58,14 @@ function ShoppingCar() {
             </>
         }
       </div>
+      <div className='div-compra'>
+        <Button className='btn-comprar-todo'>
+          Comprar todo
+        </Button>
+        <h3 className='precioTotal'>
+          Precio total: $ 115.000
+        </h3>
+      </div>
     </div>
   )
 }
